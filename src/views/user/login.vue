@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>login</p>
-    <button @click=login()> test</button>
+    <button @click=login()> Login Request</button>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
   name: "LoginInfo",
   methods: {
     login () {
-      let params = { name_and_email: "CcSupper", password: "Cc1@cclcc123" }
+      let params = { name_and_email: "CcSupper", password: "Cc@cclcc123" }
       login(params).then(response => {
         const data = response
         console.log("token", data.data)

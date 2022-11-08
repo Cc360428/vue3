@@ -6,3 +6,14 @@ export const login = (data) => request({
   method: 'post',
   data: data
 })
+
+export const logout = () => request({
+  url: "/logut",
+  method: 'post',
+})
+
+export const getInfo = (data) => request({
+  url: "/user/info",
+  method: 'post',
+  data: data
+})

@@ -1619,7 +1619,7 @@
   optionalDependencies:
     "prettier" "^1.18.2 || ^2.0.0"
 
-"@vue/devtools-api@^6.4.5":
+"@vue/devtools-api@^6.0.0-beta.11", "@vue/devtools-api@^6.4.5":
   "integrity" "sha512-JD5fcdIuFxU4fQyXUu3w2KpAJHzTVdN+p4iOX2lMWSHMOoQdMAcpFLZzm9Z/2nmsoZ1a96QEhZ26e50xLBsgOQ=="
   "resolved" "https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-6.4.5.tgz"
   "version" "6.4.5"
@@ -4341,6 +4341,11 @@
   "resolved" "https://registry.npmmirror.com/js-base64/-/js-base64-2.6.4.tgz"
   "version" "2.6.4"
 
+"js-cookie@^3.0.1":
+  "integrity" "sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw=="
+  "resolved" "https://registry.npmmirror.com/js-cookie/-/js-cookie-3.0.1.tgz"
+  "version" "3.0.1"
+
 "js-message@1.0.7":
   "integrity" "sha512-efJLHhLjIyKRewNS9EGZ4UpI8NguuL6fKkhRxVuMmrGV2xN/0APGdQYwLFky5w9naebSZ0OwAGp0G6/2Cg90rA=="
   "resolved" "https://registry.npmjs.org/js-message/-/js-message-1.0.7.tgz"
@@ -6907,6 +6912,13 @@
     "@vue/runtime-dom" "3.2.41"
     "@vue/server-renderer" "3.2.41"
     "@vue/shared" "3.2.41"
+
+"vuex@^4.1.0":
+  "integrity" "sha512-hmV6UerDrPcgbSy9ORAtNXDr9M4wlNP4pEFKye4ujJF8oqgFFuxDCdOLS3eNoRTtq5O3hoBDh9Doj1bQMYHRbQ=="
+  "resolved" "https://registry.npmmirror.com/vuex/-/vuex-4.1.0.tgz"
+  "version" "4.1.0"
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.11"
 
 "watchpack@^2.4.0":
   "integrity" "sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg=="
