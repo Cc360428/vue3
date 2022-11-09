@@ -1,15 +1,19 @@
 import axios from 'axios'
-
 const request = axios.create({
   baseURL: 'http://172.12.12.188:8886', // 所有请求的公共地址部分 TODO 这里可写环境变量
   timeout: 3000 // 请求超时时间 这里的意思是当请求时间超过5秒还未取得结果时 提示用户请求超时
 })
 
-
+// import { byteLength } from '@/utils/index'
+import store from '@/store'
+import { getToken } from '@/utils/auth'
 // request拦截器
 request.interceptors.request.use(config => {
   console.log("start request")
 
+  if (store.getters.token) {
+    config.headers['Authorization'] = getToken()
+  }
   // 待添加
   /**
    * 有增加token
@@ -19,7 +23,6 @@ request.interceptors.request.use(config => {
   console.log("请求错误")
   Promise.reject(error)
 })
-
 request.interceptors.response.use(response => {
   const res = response.data
   if (res.code != 0) {

@@ -2,20 +2,24 @@
   <h1>
     主页暂时不开发
     <hr />
-    <button @click=test()> test</button>
+    <button @click=getUserInfo()>UserInfo</button>
   </h1>
 </template>
 
 <script>
-import { byteLength } from '@/utils/index'
 export default {
   name: "HomeInfo",
   methods: {
-    test () {
+    getUserInfo () {
       console.log("start")
-
-      let res = byteLength("李超成")
-      console.log(res)
+      this.$store.dispatch('user/getInfo', "")
+      // login(params).then(response => {
+      //   const data = response
+      //   console.log("token", data.data)
+      //   this.$store.state
+      // }).catch(error => {
+      //   console.log("返回错误：", error)
+      // })
     }
   }
 }

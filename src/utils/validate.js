@@ -8,7 +8,6 @@ export function validUsername (str) {
 }
 
 
-
 /**
  * @param {string} str
  * @returns {Boolean}

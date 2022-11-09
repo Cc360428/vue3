@@ -13,14 +13,10 @@ export default {
   methods: {
     login () {
       let params = { name_and_email: "CcSupper", password: "Cc@cclcc123" }
-      this.$store.dispatch('user/login', params)
-      // login(params).then(response => {
-      //   const data = response
-      //   console.log("token", data.data)
-      //   this.$store.state
-      // }).catch(error => {
-      //   console.log("返回错误：", error)
-      // })
+      this.$store.dispatch('user/login', params).then(() => {
+        this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
+      })
+
     }
   }, computed: {
     msg () {
