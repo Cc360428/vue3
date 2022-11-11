@@ -7,6 +7,7 @@ const request = axios.create({
 // import { byteLength } from '@/utils/index'
 import store from '@/store'
 import { getToken } from '@/utils/auth'
+import router from '@/router'
 // request拦截器
 request.interceptors.request.use(config => {
   console.log("start request")
@@ -33,6 +34,10 @@ request.interceptors.response.use(response => {
     return res
   }
 }, error => {
+  if (error.response.status === 401 && error.response.data.code === -2) {
+    router.push("/login")
+    return
+  }
   console.log('3' + error)
   return Promise.reject(error)
 })
