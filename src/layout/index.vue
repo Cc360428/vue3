@@ -1,35 +1,30 @@
 <template>
   <div :class="classObj" class="app-wrapper">
-    <div v-if="device === 'mobile' && sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
-    <sidebar class="sidebar-container" />
-    <div :class="{ hasTagsView: needTagsView }" class="main-container">
-      <div :class="{ 'fixed-header': fixedHeader }">
-        <navbar />
-        <tags-view v-if="needTagsView" />
+    LayoutInfo登录后的主页
+    <!--左边控件-->
+    <sidebar class="sidebar-container"/>
+
+    <div class="main-container">
+      <div>
+        <navbar/>
+        <tags-view v-if="true" />
+        <router-view></router-view>
       </div>
-      <app-main />
-      <right-panel v-if="showSettings">
-        <settings />
-      </right-panel>
     </div>
   </div>
 </template>
 
 <script>
-import RightPanel from '@/components/RightPanel'
-import { AppMain, Navbar, Settings, Sidebar, TagsView } from './components'
 import ResizeMixin from './mixin/ResizeHandler'
-import { mapState } from 'vuex'
+import {mapState} from 'vuex'
+import {Sidebar, Navbar,TagsView} from './components'
 
 export default {
-  name: 'Layout',
+  name: 'LayoutInfo',
   components: {
-    AppMain,
-    Navbar,
-    RightPanel,
-    Settings,
     Sidebar,
-    TagsView
+    Navbar,
+    TagsView,
   },
   mixins: [ResizeMixin],
   computed: {
@@ -37,10 +32,10 @@ export default {
       sidebar: state => state.app.sidebar,
       device: state => state.app.device,
       showSettings: state => state.settings.showSettings,
-      needTagsView: state => state.settings.tagsView,
+      needTagsView: true ,// 这里线返回true
       fixedHeader: state => state.settings.fixedHeader
     }),
-    classObj () {
+    classObj() {
       return {
         hideSidebar: !this.sidebar.opened,
         openSidebar: this.sidebar.opened,
@@ -50,8 +45,8 @@ export default {
     }
   },
   methods: {
-    handleClickOutside () {
-      this.$store.dispatch('app/closeSideBar', { withoutAnimation: false })
+    handleClickOutside() {
+      this.$store.dispatch('app/closeSideBar', {withoutAnimation: false})
     }
   }
 }

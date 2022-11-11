@@ -2,7 +2,6 @@
   <div id="HomeInfo">
     <h1>
       主页Layout
-
       <hr />
       <p>名字：{{ userInfo.name }}</p>
       <p>性别：{{ userInfo.sex === 0 ? '男' : '女' }}</p>

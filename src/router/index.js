@@ -1,40 +1,44 @@
-import { createRouter, createWebHistory } from "vue-router"
-
-// 引入
-import Home from "@/views/Home.vue"
+import {createRouter, createWebHistory} from "vue-router"
 import About from "@/views/About.vue"
 import NotFound from '@/views/not_found.vue'
 import Login from '@/views/user/login.vue'
+import Layout from '@/layout'
+
 
 // 路由信息
 let routes = [
-  { path: "/:catchAll(.*)", component: NotFound },
-  {
-    path: "/",
-    name: 'home',
-    component: Home,
-  },
-  {
-    path: "/about",
-    name: 'about',
-    component: About,
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login,
-  }
+
+    {
+        path: "/",
+        name: 'Home',
+        component: Layout,
+        children: [
+            {
+                path: 'index',
+                component: () => import('@/views/Home.vue'),
+            }, {path: "/:catchAll(.*)", component: NotFound},
+        ]
+    },
+    {
+        path: "/about",
+        name: 'about',
+        component: About,
+    },
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login,
+    }
 ]
 
 // 路由器
 const router = createRouter({
-  history: createWebHistory(), // HTML5模式
-  routes,
+    history: createWebHistory(), // HTML5模式
+    routes,
 })
 
-// Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
-export function resetRouter () {
-  const newRouter = createRouter()
-  router.matcher = newRouter.matcher // reset router
+export function resetRouter() {
+    const newRouter = createRouter()
+    router.matcher = newRouter.matcher // reset router
 }
 export default router

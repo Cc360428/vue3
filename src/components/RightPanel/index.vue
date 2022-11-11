@@ -1,5 +1,5 @@
 <template>
-  <div ref="rightPanel" :class="{ show: show }" class="rightPanel-container">
+  <!-- <div ref="rightPanel" :class="{ show: show }" class="rightPanel-container">
     <div class="rightPanel-background" />
     <div class="rightPanel">
       <div class="handle-button" :style="{ 'top': buttonTop + 'px', 'background-color': theme }" @click="show = !show">
@@ -9,7 +9,8 @@
         <slot />
       </div>
     </div>
-  </div>
+  </div> -->
+  <div>左边</div>
 </template>
 
 <script>
@@ -52,7 +53,7 @@ export default {
   mounted () {
     this.insertToBody()
   },
-  beforeDestroy () {
+  beforeUnmount () {
     const elx = this.$refs.rightPanel
     elx.remove()
   },

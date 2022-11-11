@@ -6,7 +6,7 @@ import router, { resetRouter } from '@/router'
 const state = {
   token: getToken(),
   name: "Cc",
-  avatar: 'baidu.com',
+  avatar: 'http://a.hiphotos.baidu.com/zhidao/pic/item/9358d109b3de9c82b1c389d06e81800a18d843ce.jpg',// 这里应该和token一样获取
   introduction: '',
   roles: []
 }
@@ -85,9 +85,10 @@ const actions = {
         removeToken()
         resetRouter()
 
+        console.log(dispatch)
         // reset visited views and cached views
         // to fixed https://github.com/PanJiaChen/vue-element-admin/issues/2485
-        dispatch('tagsView/delAllViews', null, { root: true })
+        // dispatch('tagsView/delAllViews', null, { root: true })
 
         resolve()
       }).catch(error => {
@@ -123,7 +124,8 @@ const actions = {
     router.addRoutes(accessRoutes)
 
     // reset visited views and cached views
-    dispatch('tagsView/delAllViews', null, { root: true })
+    // dispatch('tagsView/delAllViews', null, { root: true })
+    console.log(dispatch)
   }
 }
 
