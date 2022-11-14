@@ -7,7 +7,7 @@ import Layout from '@/layout'
 
 // 路由信息
 let routes = [
-
+    {path: "/:catchAll(.*)", component: NotFound},
     {
         path: "/",
         name: 'Home',
@@ -16,7 +16,7 @@ let routes = [
             {
                 path: 'index',
                 component: () => import('@/views/Home.vue'),
-            }, {path: "/:catchAll(.*)", component: NotFound},
+            },
         ]
     },
     {
@@ -41,4 +41,5 @@ export function resetRouter() {
     const newRouter = createRouter()
     router.matcher = newRouter.matcher // reset router
 }
+
 export default router

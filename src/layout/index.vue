@@ -1,97 +1,49 @@
 <template>
-  <div :class="classObj" class="app-wrapper">
-    LayoutInfo登录后的主页
-    <!--左边控件-->
-    <sidebar class="sidebar-container"/>
-
-    <div class="main-container">
-      <div>
-        <navbar/>
-        <tags-view v-if="true" />
-        <router-view></router-view>
-      </div>
-    </div>
+  <div class="common-layout">
+    <el-container>
+      <el-header><Header/></el-header>
+      <el-container>
+        <el-aside width="200px"><Aside/></el-aside>
+        <el-container>
+          <el-main><Main/></el-main>
+          <el-footer><Footer/></el-footer>
+        </el-container>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
+
 <script>
-import ResizeMixin from './mixin/ResizeHandler'
-import {mapState} from 'vuex'
-import {Sidebar, Navbar,TagsView} from './components'
+
+import {
+  Aside,
+  Footer,
+  Header,
+  Main
+} from './components'
 
 export default {
   name: 'LayoutInfo',
   components: {
-    Sidebar,
-    Navbar,
-    TagsView,
-  },
-  mixins: [ResizeMixin],
-  computed: {
-    ...mapState({
-      sidebar: state => state.app.sidebar,
-      device: state => state.app.device,
-      showSettings: state => state.settings.showSettings,
-      needTagsView: true ,// 这里线返回true
-      fixedHeader: state => state.settings.fixedHeader
-    }),
-    classObj() {
-      return {
-        hideSidebar: !this.sidebar.opened,
-        openSidebar: this.sidebar.opened,
-        withoutAnimation: this.sidebar.withoutAnimation,
-        mobile: this.device === 'mobile'
-      }
-    }
-  },
-  methods: {
-    handleClickOutside() {
-      this.$store.dispatch('app/closeSideBar', {withoutAnimation: false})
-    }
+    Aside,
+    Footer,
+    Header,
+    Main
   }
+
 }
+
 </script>
 
-<style lang="scss" scoped>
-@import "~@/styles/mixin.scss";
-@import "~@/styles/variables.scss";
-
-.app-wrapper {
-  @include clearfix;
-  position: relative;
-  height: 100%;
-  width: 100%;
-
-  &.mobile.openSidebar {
-    position: fixed;
-    top: 0;
-  }
+<style scoped>
+.el-row {
+  align-items: center;
+  vertical-align: middle;
+  padding-top: 10px;
 }
 
-.drawer-bg {
-  background: #000;
-  opacity: 0.3;
-  width: 100%;
-  top: 0;
-  height: 100%;
-  position: absolute;
-  z-index: 999;
-}
-
-.fixed-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 9;
-  width: calc(100% - #{$sideBarWidth});
-  transition: width 0.28s;
-}
-
-.hideSidebar .fixed-header {
-  width: calc(100% - 54px)
-}
-
-.mobile .fixed-header {
-  width: 100%;
+.el-header {
+  background-color: #545c64;
 }
 </style>

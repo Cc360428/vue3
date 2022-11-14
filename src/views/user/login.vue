@@ -36,8 +36,8 @@ export default {
   data() {
     return {
       loginForm: {
-        username: 'CcSupper',// CcSupper
-        password: 'Cc@cclcc123' // Cc@cclcc123
+        username: 'Super',// CcSupper
+        password: '123456' // Cc@cclcc123
       }
     }
   },
