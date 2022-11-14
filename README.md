@@ -22,3 +22,9 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### element-plus 
+> [element-plus官网](https://element-plus.gitee.io/zh-CN/)
+
+
+npm install @element-plus/icons-vue@latest

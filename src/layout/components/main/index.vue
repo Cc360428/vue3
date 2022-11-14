@@ -1,14 +1,21 @@
 <template>
-  <div>主体部分</div>
+  <el-calendar v-model="value" />
 </template>
+
 
 <script>
 export default {
-  name: 'MainInfo'
+  name: 'MainInfo',
+  props: {},
+  data() {
+    return {
+      value: new Date(),
+    }
+  },
+  methods: {}
 }
 
-export class main {
-}
+
 </script>
 
 <style>
