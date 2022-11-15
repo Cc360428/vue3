@@ -8,7 +8,7 @@ export const login = (data) => request({
 })
 
 export const logout = () => request({
-  url: "/logut",
+  url: "/user/logout",
   method: 'post',
 })
 
