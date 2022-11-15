@@ -4,10 +4,12 @@
 
 <script>
 export default {
-  name: "OperationIndex"
+  name: "OperationIndex",
+  computed: {}
+
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

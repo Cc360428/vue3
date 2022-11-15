@@ -1,9 +1,8 @@
 <template>
   <div class="login-cc">
     <el-form ref="loginFrom" :model="loginForm" label-width="50px">
-      Login
+      <h1 class="center">Login</h1>
       <el-form-item prop="username">
-        Username：
         <el-input
             ref="username"
             v-model="loginForm.username"
@@ -13,7 +12,6 @@
             autocomplete="on"/>
       </el-form-item>
       <el-form-item prop="username">
-        Password：
         <el-input
             ref="password"
             v-model="loginForm.password"
@@ -24,7 +22,7 @@
       </el-form-item>
       <el-form-item class="center">
         <el-button type="primary" @click.prevent="login">Login</el-button>
-        <el-button @click="resetForm()">ResetValue</el-button>
+        <el-button @click="resetForm()">Reset</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -67,15 +65,14 @@ export default {
 
 .center {
   margin: auto;
-  width: 50%;
+  width: 60%;
   padding: 10px;
 }
 
 .login-cc {
   text-align: center;
-  background-color: #fff;
-  border-radius: 20px;
-  width: 600px;
+  border-radius: 60px;
+  width: 350px;
   height: 500px;
   margin: auto;
   position: absolute;

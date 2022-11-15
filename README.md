@@ -26,5 +26,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### element-plus 
 > [element-plus官网](https://element-plus.gitee.io/zh-CN/)
 
+### echarts
+> [echarts 官网](https://echarts.apache.org/zh/index.html)
+
 
 npm install @element-plus/icons-vue@latest
+
