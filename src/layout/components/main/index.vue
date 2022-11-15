@@ -1,5 +1,5 @@
 <template>
-  <el-calendar v-model="value" />
+  <router-view></router-view>
 </template>
 
 

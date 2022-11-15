@@ -10,35 +10,55 @@
       @open="handleOpen"
       @close="handleClose"
   >
+
+
     <el-menu-item index="1">
       <el-icon>
         <HomeFilled/>
       </el-icon>
-      <template #title>首页</template>
+      <template #title>
+        <router-link to='/home'><span>首页</span></router-link>
+      </template>
     </el-menu-item>
+
+
     <el-menu-item index="2">
       <el-icon>
         <Notebook/>
       </el-icon>
-      <template #title>BooksManager</template>
+      <template #title>
+        <router-link to='/books'><span>BooksManager</span></router-link>
+      </template>
     </el-menu-item>
+
+
     <el-menu-item index="3">
       <el-icon>
         <Menu/>
       </el-icon>
-      <template #title>用户管理</template>
+      <template #title>
+        <router-link to='/users'><span>用户管理</span></router-link>
+      </template>
     </el-menu-item>
+
     <el-menu-item index="4">
       <el-icon>
         <View/>
       </el-icon>
-      <template #title>操作日志</template>
+
+      <template #title>
+        <router-link to='/operations'><span>操作日志</span></router-link>
+      </template>
     </el-menu-item>
+
+
     <el-menu-item index="5">
       <el-icon>
         <Operation/>
       </el-icon>
-      <template #title>设置</template>
+      <template #title>
+        <router-link to='/settings'><span>设置</span></router-link>
+      </template>
     </el-menu-item>
   </el-menu>
 </template>
@@ -66,7 +86,7 @@ export default {
       views: [
         {id: ""}
       ],
-      isCollapse: true
+      isCollapse: false
     }
   },
   methods: {

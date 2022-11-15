@@ -14,8 +14,26 @@ let routes = [
         component: Layout,
         children: [
             {
-                path: 'index',
-                component: () => import('@/views/Home.vue'),
+                path: '/home',
+                component: () => import('@/views/home/index'),
+            },
+            {
+                path: '/books',
+                component: () => import('@/views/books/index'),
+            },
+            {
+                path: '/users',
+                component: () => import('@/views/user/index'),
+            },
+
+            {
+                path: '/operations',
+                component: () => import('@/views/operation/index'),
+            },
+
+            {
+                path: '/settings',
+                component: () => import('@/views/settings/index'),
             },
         ]
     },
