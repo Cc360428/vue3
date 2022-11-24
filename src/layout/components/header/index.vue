@@ -1,16 +1,16 @@
 <template>
   <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" :ellipsis="false"
-    @select="handleSelect">
+           @select="handleSelect">
     <el-menu-item index="0">
       <router-link to="/home">
         <el-image :src="logo" class="sidebar-logo"></el-image>
       </router-link>
     </el-menu-item>
-    <div class="flex-grow" />
+    <div class="flex-grow"/>
     <el-menu-item index="1">我的消息</el-menu-item>
     <el-sub-menu index="2">
       <template #title>{{ userInfo.name }}</template>
-      <el-menu-item index="2-1">个人详情</el-menu-item>
+      <el-menu-item index="2-1">修改密码</el-menu-item>
       <el-menu-item index="2-2" @click="logout">logout</el-menu-item>
     </el-sub-menu>
   </el-menu>
@@ -21,7 +21,7 @@ import router from "@/router"
 
 export default {
   name: 'HeaderInfo',
-  data () {
+  data() {
     return {
       logo: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png',
       userInfo: {
@@ -32,18 +32,18 @@ export default {
       }
     }
   },
-  created () {
+  created() {
     this.getUserInfo()
   },
   methods: {
-    logout () {
+    logout() {
       this.$store.dispatch('user/logout')
       this.$message.success("logout ok")
       router.push("/login").then(r => {
         console.log("logout 错误", r)
       })
     },
-    getUserInfo () {
+    getUserInfo() {
       console.log("start")
       this.$store.dispatch('user/getInfo').then(response => {
         // const user = response
