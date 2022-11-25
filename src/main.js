@@ -7,7 +7,7 @@ import 'element-plus/dist/index.css'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
 import echarts from './utils/echarts'
-import conf from "@/config/config"
+// import conf from "@/config/config"
 
 // Date.prototype.Format = function (fmt) {
 //   const o = {
@@ -24,7 +24,7 @@ import conf from "@/config/config"
 //     if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)))
 //   return fmt
 // }
-createApp.prototype.config = conf
+// createApp.prototype.config = conf
 const app = createApp(App)
 app.config.globalProperties.$echarts = echarts
 app.use(store)

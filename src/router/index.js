@@ -17,10 +17,10 @@ let routes = [
                 path: '/home',
                 component: () => import('@/views/home/index'),
             },
-            {
-                path: '/books',
-                component: () => import('@/views/books/index'),
-            },
+            // {
+            //     path: '/books',
+            //     component: () => import('@/views/books/index'),
+            // },
             {
                 path: '/users',
                 component: () => import('@/views/user/index'),

@@ -38,7 +38,7 @@ export default {
   methods: {
     connWS() {
       connectWebsocket(
-          this.config.Ws_URL + "?uid=1",
+          "http://172.12.12.188:8887?uid=1",
           // 发送
           "HeartBeat",
           // 成功拿到后台返回的数据的回调函数
