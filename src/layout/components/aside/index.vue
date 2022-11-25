@@ -17,16 +17,16 @@
       </el-menu-item>
     </router-link>
 
-    <router-link to='/books' class="link-aside">
-      <el-menu-item index="2">
-        <el-icon>
-          <Notebook />
-        </el-icon>
-        <template #title>
-          <span class="span-aside">BooksManager</span>
-        </template>
-      </el-menu-item>
-    </router-link>
+<!--    <router-link to='/books' class="link-aside">-->
+<!--      <el-menu-item index="2">-->
+<!--        <el-icon>-->
+<!--          <Notebook />-->
+<!--        </el-icon>-->
+<!--        <template #title>-->
+<!--          <span class="span-aside">BooksManager</span>-->
+<!--        </template>-->
+<!--      </el-menu-item>-->
+<!--    </router-link>-->
 
     <router-link to='/users' class="link-aside">
       <el-menu-item index="3">
@@ -68,7 +68,7 @@
 import {
   HomeFilled,
   Menu,
-  Notebook,
+  // Notebook,
   View,
   Operation
 } from '@element-plus/icons-vue'
@@ -78,7 +78,7 @@ export default {
   components: {
     HomeFilled,
     Menu,
-    Notebook,
+    // Notebook,
     View,
     Operation
   },

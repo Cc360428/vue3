@@ -1,6 +1,11 @@
 <template>
   <div>
-    <el-table :data="tableData" stripe style="width: 100%">
+    <el-table
+        :data="tableData"
+        stripe style="width: 50%"
+        :default-sort="{ prop: 'id', order: 'descending' }"
+        row-key="id"
+    >
       <el-table-column prop="id" label="Id" width="50" />
       <el-table-column prop="name" label="Name" v-show="true" width="180" />
       <el-table-column prop="sex" label="Sex" width="50" />

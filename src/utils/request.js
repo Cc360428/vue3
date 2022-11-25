@@ -2,7 +2,7 @@ import axios from 'axios'
 import {ElMessage} from 'element-plus'
 
 const request = axios.create({
-    baseURL: 'http://172.12.12.188:8886', // 所有请求的公共地址部分 TODO 这里可写环境变量
+    baseURL: this.config.Server_URL, // 所有请求的公共地址部分 TODO 这里可写环境变量
     timeout: 3000 // 请求超时时间 这里的意思是当请求时间超过5秒还未取得结果时 提示用户请求超时
 })
 

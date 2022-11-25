@@ -18,6 +18,7 @@
 
 <script>
 import router from "@/router"
+import {closeWebsocket} from '@/api/websocket/socket'
 
 export default {
   name: 'HeaderInfo',
@@ -39,6 +40,7 @@ export default {
     logout() {
       this.$store.dispatch('user/logout')
       this.$message.success("logout ok")
+      closeWebsocket()
       router.push("/login").then(r => {
         console.log("logout 错误", r)
       })
