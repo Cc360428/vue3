@@ -67,7 +67,7 @@ export default {
       let p = this.loginForm
       if (p.username === "") return this.$message.error("username  不能为空")
       if (p.password === "") return this.$message.error("password  不能为空")
-      let params = {name_and_email: p.username, password: p.password}
+      let params = {NameAndEmail: p.username, Password: p.password}
       this.$store.dispatch('user/login', params).then(() => {
         this.$message.success("欢迎👏 " + p.username + " 登录成功")
         // 这里连接websocket服务

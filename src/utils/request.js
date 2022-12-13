@@ -20,7 +20,7 @@ request.interceptors.request.use(config => {
 }, error => {
     console.log("请求错误")
     Promise.reject(error).then(r => {
-        console.log("reject error:"+r)
+        console.log("reject error:" + r)
     })
 })
 request.interceptors.response.use(response => {
